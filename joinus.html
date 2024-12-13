@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelvin's Portfolio - Join Us</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Kelvin's Creative Portfolio</h1>
+    </header>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="socialMed.html">Social Media APP</a></li>
+            <li><a href="invoice.html">Invoice</a></li>
+            <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+            <li><a href="mpg-calculator.html">MPG calculator</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="joinus.html">Join Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="content">
+        <h2>Join Us</h2>
+        <p>Fill in your information and leave us a message!</p>
+        <form action="thankyou.html" method="POST" id="joinUsForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>Follow me on:</p>
+        <ul class="social-media">
+            <li><a href="https://github.com/">GitHub</a></li>
+            <li><a href="https://linkedin.com/">LinkedIn</a></li>
+            <li><a href="https://twitter.com/">Twitter</a></li>
+        </ul>
+        <p>&copy; 2024 Kelvin's Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const colors = ['#FF5733', '#33FF57', '#3357FF', '#F1C40F', '#8E44AD'];
+        let currentIndex = 0;
+
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = colors[currentIndex];
+            currentIndex = (currentIndex + 1) % colors.length;
+        }
+
+        setInterval(changeBackgroundColor, 5000);
+    </script>
+</body>
+</html>

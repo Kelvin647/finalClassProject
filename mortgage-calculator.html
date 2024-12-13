@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kelvin's Portfolio - Home Mortgage Calculator</title>
+  <script language="JavaScript" src="calculator.js"></script> <!-- External JavaScript for calculations -->
+  <style>
+    /* Overall page styling */
+    body {
+      background-color: #F0F8FF; /* Light blue background */
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+
+    /* Header styling */
+    header {
+      background-color: #3498db;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      width: 100%;
+    }
+
+    /* Navigation Menu Styling */
+    nav {
+      background-color: #2c3e50;
+      padding: 10px 0;
+      width: 100%;
+    }
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+    nav ul li {
+      display: inline;
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav ul li a:hover {
+      color: #f39c12;
+    }
+
+    /* Container for the calculator */
+    .container {
+      width: 100%;
+      max-width: 450px;
+      padding: 20px;
+      background-color: #FFFFFF;
+      border: 1px solid #CCCCCC;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      margin: 20px;
+    }
+
+    /* Header styling within the container */
+    .title {
+      font-size: 24px;
+      color: #2F4F4F; /* Dark Slate Gray */
+      margin-bottom: 10px;
+    }
+
+    /* Instruction box styling */
+    .instructions {
+      font-size: 12px;
+      background-color: #FAFAD2; /* Light Goldenrod Yellow */
+      padding: 10px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      color: #333;
+      border: 1px solid #E8E8E8;
+    }
+
+    /* Table styling */
+    table {
+      width: 100%;
+      background-color: #F9F9F9;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    /* Input fields styling */
+    input[type="text"], select {
+      width: 90%;
+      padding: 8px;
+      margin: 5px 0;
+      border: 1px solid #B0C4DE; /* Light Steel Blue */
+      border-radius: 4px;
+      font-size: 14px;
+      text-align: right;
+    }
+
+    /* Button styling */
+    .button {
+      width: 100px;
+      padding: 10px;
+      margin: 5px;
+      font-size: 14px;
+      color: white;
+      background-color: #4CAF50; /* Green for Calculate */
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .button:hover {
+      background-color: #45A049;
+    }
+    .reset {
+      background-color: #E74C3C; /* Red for Reset */
+    }
+    .reset:hover {
+      background-color: #C0392B;
+    }
+
+    /* Styling for the results section */
+    .result-label {
+      font-weight: bold;
+      color: #333;
+      font-size: 14px;
+    }
+
+    /* Footer styling */
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #2c3e50;
+      color: white;
+      width: 100%;
+    }
+    .social-media {
+      list-style-type: none;
+      padding: 0;
+    }
+    .social-media li {
+      display: inline;
+      margin: 0 10px;
+    }
+    .social-media li a {
+      color: #f39c12;
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>Kelvin's Creative Portfolio</h1>
+  </header>
+
+  <!-- Navigation Menu -->
+  <nav>
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="socialMed.html">Social Media APP</a></li>
+      <li><a href="invoice.html">Invoice</a></li>
+      <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+      <li><a href="mpg-calculator.html">MPG Calculator</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="joinus.html">Join Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Mortgage Calculator Content -->
+  <div class="container">
+    <div class="title">Home Mortgage Calculator</div>
+    <div class="instructions">
+      To use the Home Mortgage Calculator, enter the mortgage amount, interest rate, and number of years. Click "Calculate" to see an estimate of your monthly payment.
+
+      
+    </div>
+
+    <form name="Form1">
+      <table>
+        <tr>
+          <td>Mortgage:</td>
+          <td><input type="text" name="Amount"></td>
+        </tr>
+        <tr>
+          <td>Interest (e.g., 7.9):</td>
+          <td><input type="text" name="Rate"></td>
+        </tr>
+        <tr>
+          <td>Years:</td>
+          <td>
+            <select name="Years">
+              <option value="0">0</option>
+              <option value="0">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+              <option value="25">25</option>
+              <option value="30">30</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <input type="button" value="Calculate" onclick="mortCalc(Form1)" class="button">
+            <input type="reset" value="Reset" class="button reset">
+          </td>
+        </tr>
+        <tr>
+          <td class="result-label">Your monthly payment:</td>
+          <td><input type="text" name="Payment" readonly></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>Follow me on:</p>
+    <ul class="social-media">
+      <li><a href="https://github.com/">GitHub</a></li>
+      <li><a href="https://linkedin.com/">LinkedIn</a></li>
+      <li><a href="https://X.com/">X</a></li>
+    </ul>
+    <p>&copy; 2024 Kelvin's Portfolio. All rights reserved.</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Full-Screen Thank You Modal Styling */
+        .thank-you-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(212, 175, 55, 0.85); /* Neon Green */
+
+            
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .thank-you-overlay h1 {
+            font-size: 64px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .thank-you-overlay p {
+            font-size: 24px;
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .thank-you-overlay a {
+            color: #f39c12;
+            font-size: 24px;
+            text-decoration: underline;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #333;
+            border-radius: 8px;
+        }
+
+        .thank-you-overlay a:hover {
+            background-color: #444;
+            color: #f1c40f;
+        }
+
+        .thank-you-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 36px;
+            cursor: pointer;
+        }
+
+        .thank-you-close:hover {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Thank You Full-Screen Modal -->
+    <div class="thank-you-overlay" id="thankYouModal">
+        <span class="thank-you-close" id="closeThankYou">&times;</span>
+        <h1>THANK YOU FOR JOINING US!</h1>
+        <p>Your message has been received. We'll get back to you soon!</p>
+        <p><a href="index.html">Back to Home</a></p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Follow me on:</p>
+        <ul class="social-media">
+            <li><a href="https://github.com/">GitHub</a></li>
+            <li><a href="https://linkedin.com/">LinkedIn</a></li>
+            <li><a href="https://twitter.com/">Twitter</a></li>
+        </ul>
+        <p>&copy; 2024 Kelvin's Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Display the Thank You modal
+        function showThankYouModal() {
+            const thankYouModal = document.getElementById('thankYouModal');
+            thankYouModal.style.display = 'flex';
+        }
+
+        // Close the modal when the close button is clicked
+        document.getElementById('closeThankYou').onclick = function () {
+            document.getElementById('thankYouModal').style.display = 'none';
+        };
+
+        // Show the Thank You modal when the page loads
+        window.onload = showThankYouModal;
+    </script>
+</body>
+</html>

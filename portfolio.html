@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelvin's Portfolio - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Kelvin's Creative Portfolio</h1>
+    </header>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="socialMed.html">Social Media APP</a></li>
+            <li><a href="invoice.html">Invoice</a></li>
+            <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+            <li><a href="mpg-calculator.html">MPG calculator</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="joinus.html">Join Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="content">
+        <h2>My Portfolio</h2>
+        <p>Here are some of my recent projects,net results and organized by category. Click on a project for more details.</p>
+
+        <!-- Portfolio Gallery -->
+        <div class="portfolio-gallery">
+            <!-- Project 1 -->
+            <div class="project">
+                <img src="design-templates.jpg" alt="Design Templates Bundle" class="product-image">
+                <p><strong>Website Redesign for Inua Jamii </strong> - LIJ organisation</p>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project">
+            <img src="custom-design.jpg" alt="Custom Design Services" class="product-image">
+                <p><strong>Logo and Branding for JUMIA Enterprise</strong> - Branding and Identity</p>
+
+              </div>
+
+            <!-- Project 3 -->
+            <div class="project">
+                <img src="project3-thumbnail.jpg" alt="Logo and Branding for JUMIA Enterprise" class="thumbnail">
+                <p><strong>Logo and Branding for JUMIA Enterprise</strong> - Branding and Identity</p>
+            </div>
+
+            <!-- Add more projects as needed -->
+        </div>
+
+        <!-- Detailed Project View (Example for Project 1) -->
+        <section class="project-details">
+            <h3>Website Redesign for Kilimall Company</h3>
+            <img src="project1-full.jpg" alt="Full view of Kilimall Company website redesign">
+            <p>This project involved a full redesign of Kilimall Company's website with a focus on improving the user interface (UI) and user experience (UX). The outcome resulted in a 30% increase in user engagement and positive feedback from the client.</p>
+        </section>
+
+        <!-- Downloadable Resume/CV -->
+        <div class="resume-download">
+            <h3>Download My Resume</h3>
+            <p>If you'd like to learn more about my professional experience and skills, feel free to download my resume:</p>
+            <a href="kelvin-resume.pdf" download>Download Resume (PDF)</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Follow me on:</p>
+        <ul class="social-media">
+            <li><a href="https://github.com/">GitHub</a></li>
+            <li><a href="https://linkedin.com/">LinkedIn</a></li>
+            <li><a href="https://twitter.com/">Twitter</a></li>
+        </ul>
+        <p>&copy; 2024 Kelvin's Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const colors = ['#FF5733', '#33FF57', '#3357FF', '#F1C40F', '#8E44AD'];
+        let currentIndex = 0;
+
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = colors[currentIndex];
+            currentIndex = (currentIndex + 1) % colors.length;
+        }
+
+        setInterval(changeBackgroundColor, 5000);
+    </script>
+</body>
+
+</html>

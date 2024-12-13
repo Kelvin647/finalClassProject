@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelvin Designs - Invoice</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Header */
+        header {
+            background-color: #003566;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #00509e;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 1em;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Invoice Container */
+        .invoice-container {
+            width: 90%;
+            max-width: 900px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #003566;
+        }
+
+        .invoice-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .invoice-section input {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #00509e;
+            color: white;
+        }
+
+        .total-section {
+            text-align: right;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        .result {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #003566;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap;
+            }
+
+            nav a {
+                margin: 5px 10px;
+            }
+
+            .invoice-header {
+                flex-direction: column;
+            }
+
+            table th, table td {
+                font-size: 0.9em;
+            }
+        }
+
+        /* New Styles for the invoice footer content */
+        .invoice-footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            border-top: 2px solid #ddd;
+            text-align: left;
+            font-size: 0.9em;
+        }
+
+        .invoice-footer p {
+            margin: 5px 0;
+        }
+
+        .invoice-footer strong {
+            color: #003566;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Kelvin Designs</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+
+        <a href="index.html">Home</a>
+        <a href="Invoice.html">Invoice</a>
+        <a href="mortgage-calculator.html">Mortgage Calculator</a>
+        <a href="mpg-calculator.html">MPG calculator</a>
+        <a href="about.html">About Me</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+        <a href="joinus.html">Join Us</a>
+
+    </nav>
+
+    <!-- Invoice Section -->
+    <div class="invoice-container">
+        <h1>Invoice</h1>
+        <p><strong>Invoice #:</strong> <span id="invoiceNumber"></span></p>
+
+        <script>
+            function generateInvoiceNumber() {
+                const today = new Date();
+                const dateString = today.getFullYear() + ("0" + (today.getMonth() + 1)).slice(-2) + ("0" + today.getDate()).slice(-2); // YYYYMMDD
+                const uniqueId = dateString + '-001'; // Custom unique suffix, can be incremented as needed
+                document.getElementById('invoiceNumber').innerText = uniqueId;
+            }
+
+            generateInvoiceNumber(); // Call the function to set the invoice number
+        </script>
+
+        <p><strong>Date:</strong> <span id="invoiceDate"></span></p>
+        <div class="invoice-header">
+            <div>
+                <p>Address: 48W 13th St, New York, NY 100023</p>
+                <p>Phone: +1(646) 836-2757</p>
+                <p>Email: Kkamau1234@gmail.com</p>
+            </div>
+            <div>
+                <p><strong>Bill To:</strong></p>
+                <p>Name: <input type="text" placeholder="Enter Client Name" /></p>
+                <p>Address: <input type="text" placeholder="Address, City, ZIP Code" /></p>
+                <p>Phone No: <input type="number" placeholder="(123) 456 7890" /></p>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Item Description</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody id="invoiceItems">
+                <tr>
+                    <td><input type="text" placeholder="Enter item description"></td>
+                    <td><input type="number" placeholder="Enter amount" class="amount" oninput="calculateInvoice()"></td>
+                </tr>
+            </tbody>
+        </table>
+        <button onclick="addRow()">Add Item</button>
+
+        <div class="total-section">
+            <p>Subtotal: <span id="subtotal" class="result">$0.00</span></p>
+            <p>Tax (10%): <span id="tax" class="result">$0.00</span></p>
+            <p><strong>Total: <span id="total" class="result">$0.00</span></strong></p>
+        </div>
+
+        <!-- Invoice Footer Information -->
+        <div class="invoice-footer">
+            <p><strong>Make all checks payable to Kelvin Designs</strong></p>
+            <p>If you have any questions concerning this invoice, use the following contact information:</p>
+            <p>Contact Name, Phone Number, Email</p>
+            <p><strong>Thank you for your business!</strong></p>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Follow me on:</p>
+        <ul class="social-media">
+            <li><a href="https://github.com/">GitHub</a></li>
+            <li><a href="https://linkedin.com/">LinkedIn</a></li>
+            <li><a href="https://X.com/">X</a></li>
+        </ul>
+        <p>&copy; 2024 Kelvin's Portfolio. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById("invoiceDate").innerText = new Date().toLocaleDateString();
+
+        function addRow() {
+            const tableBody = document.getElementById("invoiceItems");
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td><input type="text" placeholder="Enter item description"></td>
+                <td><input type="number" placeholder="Enter amount" class="amount" oninput="calculateInvoice()"></td>
+            `;
+            tableBody.appendChild(row);
+        }
+
+        function calculateInvoice() {
+            let subtotal = 0;
+            const amounts = document.querySelectorAll(".amount");
+            amounts.forEach(input => {
+                const value = parseFloat(input.value);
+                if (!isNaN(value) && value > 0) {
+                    subtotal += value;
+                }
+            });
+
+            const tax = subtotal * 0.1; // Assuming a 10% tax rate
+            const total = subtotal + tax;
+
+            document.getElementById("subtotal").innerText = `$${subtotal.toFixed(2)}`;
+            document.getElementById("tax").innerText = `$${tax.toFixed(2)}`;
+            document.getElementById("total").innerText = `$${total.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>

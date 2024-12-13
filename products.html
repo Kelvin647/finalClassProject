@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelvin's Portfolio - Products</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic styles */
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #2C3E50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        nav {
+            margin: 20px 0;
+        }
+
+        .menu {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .menu li {
+            display: inline-block;
+            position: relative;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: #2980B9;
+            font-weight: bold;
+            padding: 10px 15px;
+            display: block;
+        }
+
+        .menu a:hover {
+            background-color: #3498DB;
+            color: white;
+        }
+
+        /* Dropdown menu */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #ECF0F1;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: #2980B9;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-weight: normal;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Show dropdown on hover */
+        .menu li:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Styling the content section */
+        .content {
+            padding: 20px;
+        }
+
+        /* Product listings */
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .product-item {
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 30%;
+            text-align: center;
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #3498DB;
+        }
+
+        .buy-btn {
+            padding: 10px 20px;
+            background-color: #3498DB;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .buy-btn:hover {
+            background-color: #2980B9;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #2C3E50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .social-media {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .social-media li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .social-media a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Kelvin's Creative Portfolio</h1>
+    </header>
+
+    <!-- Navigation Menu with Dropdown -->
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="socialMed.html">Social Media APP</a></li>
+            <li><a href="invoice.html">Invoice</a></li>
+            <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>          
+            <li><a href="mpg-calculator.html">MPG calculator</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <!-- Dropdown for Products -->
+            <li>
+                <a href="products.html">Products</a>
+                <div class="dropdown-content">
+                    <a href="#product1">Product 1</a>
+                    <a href="#product2">Product 2</a>
+                    <a href="#product3">Product 3</a>
+                </div>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="joinus.html">Join Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Section -->
+    <section class="content">
+        <h2>My Products</h2>
+        <p>Explore the range of digital products and creative services I offer.</p>
+
+        <!-- Product Listings -->
+        <div class="product-list">
+            <!-- Product 1: Kelvin's Content Creation Guide -->
+            <div id="product1" class="product-item">
+                <img src="kelvins-content-guide.jpg" alt="Kelvin's Content Creation Guide" class="product-image">
+                <h3>Kelvin's Content Creation Guide</h3>
+                <p>Master content creation with my comprehensive guide designed for creatives. Includes strategies, templates, and resources.</p>
+                <p class="price">$49.99</p>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+
+            <!-- Product 2: Design Templates Bundle -->
+            <div id="product2" class="product-item">
+                <img src="design-templates.jpg" alt="Design Templates Bundle" class="product-image">
+                <h3>Design Templates Bundle</h3>
+                <p>A collection of professionally designed templates for your creative projects. Includes social media templates, brochures, and more.</p>
+                <p class="price">$29.99</p>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+
+            <!-- Product 3: Custom Design Services -->
+            <div id="product3" class="product-item">
+                <img src="custom-design.jpg" alt="Custom Design Services" class="product-image">
+                <h3>Custom Design Services</h3>
+                <p>Work with me directly for custom design services, including branding, website design, and marketing materials.</p>
+                <p class="price">Starting at $199.99</p>
+                <button class="buy-btn">Get a Quote</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Follow me on:</p>
+        <ul class="social-media">
+            <li><a href="https://github.com/">GitHub</a></li>
+            <li><a href="https://linkedin.com/">LinkedIn</a></li>
+            <li><a href="https://twitter.com/">Twitter</a></li>
+        </ul>
+        <p>&copy; 2024 Kelvin's Portfolio. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

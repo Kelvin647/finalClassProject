@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelvin's Portfolio - Contact</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Kelvin's Creative Portfolio</h1>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="socialMed.html">Social Media APP</a></li>
+            <li><a href="invoice.html">Invoice</a></li>
+            <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+            <li><a href="mpg-calculator.html">MPG calculator</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="joinus.html">Join Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Content Section -->
+    <section class="content">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out to me through the following methods:</p>
+        <ul>
+            <li><strong>Phone:</strong> +1(646) 836-2757</li>
+            <li><strong>Email:</strong> Kkamau1234@gmail.com</li>
+            <li><strong>Address:</strong> 48W 13th St, New York, NY 100023</li>
+            <li>
+                <strong>Social Media:</strong>
+                <ul>
+                    <li><a href="https://X.com/yourhandle" target="_blank">Twitter (X)</a></li>
+                    <li><a href="https://facebook.com/yourprofile" target="_blank">Facebook</a></li>
+                    <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
+                    <li><a href="https://instagram.com/yourhandle" target="_blank">Instagram</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3>Embed Google Map</h3>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3171.7811327765256!2d-122.0838501842314!3d37.38605197982568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb5b03724a5a7%3A0x9b7e28cba4acb8aa!2s123%20Main%20St%2C%20City%2C%20Country!5e0!3m2!1sen!2sus!4v1633593727365!5m2!1sen!2sus" 
+            width="400" 
+            height="350" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Follow me on:</p>
+        <ul class="social-media">
+            <li><a href="https://github.com/Kelvin92-design/">GitHub</a></li>
+            <li><a href="https://linkedin.com/">LinkedIn</a></li>
+            <li><a href="https://X.com/">X</a></li>
+        </ul>
+        <p>&copy; 2024 Kelvin's Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const colors = ['#FF5733', '#33FF57', '#3357FF', '#F1C40F', '#8E44AD'];
+        let currentIndex = 0;
+
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = colors[currentIndex];
+            currentIndex = (currentIndex + 1) % colors.length;
+        }
+
+        setInterval(changeBackgroundColor, 5000);
+    </script>
+</body>
+</html>

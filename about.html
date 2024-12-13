@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelvin's Portfolio - About Me</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Kelvin's Creative Portfolio</h1>
+    </header>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="socialMed.html">Social Media APP</a></li>
+            <li><a href="invoice.html">Invoice</a></li>
+            <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+            <li><a href="mpg-calculator.html">MPG calculator</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="joinus.html">Join Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="content">
+        <h2>About Me</h2>
+
+        <!-- Biography Section -->
+        <div class="biography">
+            <img src="headshot.jpg" alt="Kelvin's Headshot" class="headshot">
+            <p><strong>Kelvin, Computer Science Graduate and Creative Enthusiast</strong></p>
+            <p>Hello! I am Kelvin, a passionate creative professional with a background in Computer Science. My journey started during my academic years, where I developed strong problem-solving skills and a love for design. After graduating, I pursued a career that blends technology and creativity.</p>
+        </div>
+
+        <!-- Experience and Journey -->
+        <div class="experience">
+            <h3>Experience and Journey</h3>
+            <p>Throughout my career, I have been involved in numerous creative and technical projects:</p>
+            <ul>
+                <li>Developed user-friendly websites for startups and small businesses.</li>
+                <li>Designed captivating graphics and logos for branding projects.</li>
+                <li>Collaborated on app development with a focus on UI/UX design.</li>
+                <li>Produced content for digital marketing campaigns that enhanced online presence.</li>
+            </ul>
+            <p>My approach is centered on combining aesthetic appeal with functionality, ensuring that each project I work on meets both client goals and user expectations.</p>
+        </div>
+
+        <!-- Skills and Services -->
+        <div class="skills-services">
+            <h3>Skills and Services</h3>
+            <p>I offer a range of services that leverage my skills in both creative design and technical execution:</p>
+            <ul>
+                <li>Content Creation (blogs, articles, social media)</li>
+                <li>Web Design and Development (HTML, CSS, JavaScript)</li>
+                <li>Graphic Design (logos, brochures, digital art)</li>
+                <li>User Experience (UX) and Interface Design (UI)</li>
+                <li>SEO Optimization for websites</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>Follow me on:</p>
+        <ul class="social-media">
+            <li><a href="https://github.com/">GitHub</a></li>
+            <li><a href="https://linkedin.com/">LinkedIn</a></li>
+            <li><a href="https://twitter.com/">Twitter</a></li>
+        </ul>
+        <p>&copy; 2024 Kelvin's Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const colors = ['#FF5733', '#33FF57', '#3357FF', '#F1C40F', '#8E44AD'];
+        let currentIndex = 0;
+
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = colors[currentIndex];
+            currentIndex = (currentIndex + 1) % colors.length;
+        }
+
+        setInterval(changeBackgroundColor, 5000);
+    </script>
+</body>
+
+</html>

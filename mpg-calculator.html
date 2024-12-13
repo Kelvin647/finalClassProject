@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelvin Creative-Onlive MPG Calculator</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your external CSS -->
+    <style>
+        /* Additional styles specific to MPG calculator page */
+        .calculator-container {
+            background: linear-gradient(to bottom right, #e0f7fa, #80deea);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            width: 350px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            
+        }
+        .calculator-container h1 {
+            font-size: 1.8em;
+            color: #00509E;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        /* calculator styles  */
+        .calculator-container label {
+            display: block;
+            font-weight: bold;
+            color: #003566;
+            margin: 10px 0 5px;
+            font-size: 1.1em;
+        }
+        .calculator-container input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 4px;
+            border: 1px solid #bbb;
+            font-size: 1em;
+            transition: box-shadow 0.3s;
+        }
+        .calculator-container input:focus {
+            box-shadow: 0 0 5px #00509E;
+            outline: none;
+        }
+        .calculator-container button {
+            width: 100%;
+            padding: 12px;
+            background-color: #FF6B6B;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .calculator-container button:hover {
+            background-color: #FF4C4C;
+            transform: scale(1.05);
+        }
+        .result {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #009688;
+            margin-top: 15px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .error {
+            font-size: 1em;
+            color: #FF4C4C;
+            margin-top: 10px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .fade-in {
+            opacity: 1 !important;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Kelvin Creative-MPG Calculator</h1>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="socialMed.html">Social Media APP</a></li>
+            <li><a href="invoice.html">Invoice</a></li>
+            <li><a href="mortgage-calculator.html">Mortgage Calculator</a></li>
+            <li><a href="mpg_calculator.html">MPG Calculator</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="joinus.html">Join Us</a></li>
+            
+        </ul>
+    </nav>
+
+    <!-- MPG Calculator Section -->
+    <div class="calculator-container">
+        <h1>Online MPG Calculator</h1>
+        <label for="milesTraveled">Miles Traveled:</label>
+        <input type="number" id="milesTraveled" placeholder="Enter mileage traveled">
+        
+        <label for="gallonsOfGas">Gallons of Gas Used:</label>
+        <input type="number" id="gallonsOfGas" placeholder="Enter gallons of gas consumed">
+        
+        <button onclick="calculateMPG()">Calculate MPG</button>
+        
+        <div class="result" id="result"></div>
+        <div class="error" id="error"></div>
+    </div>
+
+    <!-- JavaScript for MPG Calculator -->
+    <script>
+        function calculateMPG() {
+            const milesTraveled = parseFloat(document.getElementById("milesTraveled").value);
+            const gallonsOfGas = parseFloat(document.getElementById("gallonsOfGas").value);
+            const resultElement = document.getElementById("result");
+            const errorElement = document.getElementById("error");
+
+            resultElement.classList.remove("fade-in");
+            errorElement.classList.remove("fade-in");
+
+            if (isNaN(milesTraveled) || isNaN(gallonsOfGas) || gallonsOfGas <= 0 || milesTraveled < 0) {
+                errorElement.innerText = "Please enter valid positive numbers.";
+                errorElement.classList.add("fade-in");
+                resultElement.innerText = "";
+                return;
+            }
+
+            const milesPerGallon = milesTraveled / gallonsOfGas;
+            resultElement.innerText = `Miles per Gallon: ${milesPerGallon.toFixed(2)}`;
+            resultElement.classList.add("fade-in");
+            errorElement.innerText = "";
+        }
+    </script>
+</body>
+</html>
